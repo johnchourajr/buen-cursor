@@ -61,7 +61,7 @@ export function GlobalHeader() {
           animate={scrolled ? "hidden" : "initial"}
         >
           <div className="col-span-full flex w-full gap-4 items-center justify-center">
-            <GlobalHeaderCopyButton text={"npx jsr add @buen/type"} />
+            <GlobalHeaderCopyButton text={"npx jsr add @buen/cursor"} />
             <Link
               href={"https://jsr.io/@buen/type"}
               className="uppercase text-body"
@@ -89,12 +89,11 @@ export function GlobalHeader() {
             animate={scrolled ? "hidden" : "initial"}
           >
             <div className="col-span-full border-b-1 pb-3 border-[--color-primary]">
-              <h1 className="uppercase text-string ">@buen/type</h1>
+              <h1 className="uppercase text-string ">@buen/cursor</h1>
             </div>
             <div className="col-span-full">
               <p className="text-body max-w-[15em]">
-                A Tailwind CSS Plugin for creating and managing good typography
-                systems
+                A TypeScript first Custom Cursor for React and Next.js
               </p>
             </div>
           </motion.div>

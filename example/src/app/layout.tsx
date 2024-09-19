@@ -1,4 +1,3 @@
-import { GlobalFooter } from "@/components/GlobalFooter";
 import { GlobalHeader } from "@/components/GlobalHeader";
 import type { Metadata } from "next";
 import React from "react";
@@ -29,7 +28,6 @@ export default function RootLayout({
       <body className="font-sans">
         <GlobalHeader />
         {children}
-        <GlobalFooter />
       </body>
     </html>
   );

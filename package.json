@@ -1,12 +1,8 @@
 {
-  "name": "@buen/type",
+  "name": "@buen/cursor",
   "version": "0.0.0",
   "author": "John Choura",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/johnchourajr/buen-type.git"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "check-types": "tsc --noEmit"
