@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES6",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "outDir": "dist", // Output directory
+    "rootDir": "src", // Source directory
+    "target": "ES6",  // JavaScript target
     "module": "ESNext",
+    "lib": ["DOM", "ESNext"],
     "jsx": "react-jsx",
     "strict": true,
-    "moduleResolution": "node",
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "declaration": true, // Generate .d.ts files for TypeScript types
+    "sourceMap": true,   // Generate source maps
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
+    "allowSyntheticDefaultImports": true
   },
-  "include": ["src"],
-  "exclude": ["node_modules", "build"]
+  "include": ["src"],  // Source files
+  "exclude": ["node_modules"]  // Exclude node_modules
 }

@@ -1,0 +1,8 @@
+node_modules
+src/**/*.ts
+src/**/*.tsx
+!src/style/cursor.css
+.git
+dist/*.map
+.eslintrc.json
+prettier.config.js

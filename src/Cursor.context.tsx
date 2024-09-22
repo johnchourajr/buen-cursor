@@ -1,5 +1,6 @@
 import {
   createContext,
+  Dispatch,
   ReactNode,
   useContext,
   useEffect,
@@ -8,11 +9,11 @@ import {
 
 type BuenCursorContextType = {
   cursorState: string;
-  setCursorState: (cursorState: string) => void;
+  setCursorState: Dispatch<string>;
   cursorMessage: string;
-  setCursorMessage: (cursorMessage: string) => void;
+  setCursorMessage: Dispatch<string>;
   enableCursor: boolean;
-  setEnableCursor: (enableCursor: boolean) => void;
+  setEnableCursor: Dispatch<boolean>;
   viewportSize: { width: number; height: number };
 };
 
