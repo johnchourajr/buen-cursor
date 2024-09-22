@@ -20,7 +20,7 @@ const BuenCursorContext = createContext<BuenCursorContextType | undefined>(
   undefined,
 );
 
-export function useBuenCursorContext() {
+export function useBuenCursorContext(): BuenCursorContextType {
   const context = useContext(BuenCursorContext);
   if (!context) {
     throw new Error("useBuenCursor must be used within a BuenCursorProvider");
@@ -28,7 +28,11 @@ export function useBuenCursorContext() {
   return context;
 }
 
-export function BuenCursorProvider({ children }: { children: ReactNode }) {
+export function BuenCursorProvider({
+  children,
+}: {
+  children: ReactNode;
+}): JSX.Element {
   const [cursorState, setCursorState] = useState("default");
   const [cursorMessage, setCursorMessage] = useState("");
   const [enableCursor, setEnableCursor] = useState(true);

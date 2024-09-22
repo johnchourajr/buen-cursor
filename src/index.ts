@@ -1,5 +1,19 @@
-import { BuenCursorProvider, useBuenCursorContext } from "./context";
-import { Cursor } from "./cursor";
-import { useCursorPosition } from "./utils";
+/**
+ * @module BuenCursor
+ */
+export { Cursor } from "./Cursor";
 
-export { BuenCursorProvider, Cursor, useBuenCursorContext, useCursorPosition };
+/**
+ * @module BuenCursorProvider
+ */
+export { BuenCursorProvider } from "./Cursor.context";
+
+/**
+ * @module useBuenCursorContext
+ */
+export { useBuenCursorContext } from "./Cursor.context";
+
+/**
+ * @module useCursorPosition
+ */
+export { useCursorPosition } from "./useCursorPosition";

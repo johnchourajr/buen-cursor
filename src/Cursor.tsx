@@ -1,10 +1,8 @@
 import { clsx } from "clsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 
-import { useBuenCursorContext } from "../context/Cursor.context";
-import { useCursorPosition } from "../utils/useCursorPosition";
-
-import "../style/cursor.css";
+import { useBuenCursorContext } from "./Cursor.context";
+import { useCursorPosition } from "./useCursorPosition";
 
 type CursorProps = {
   className?: string;
@@ -22,7 +20,7 @@ export function Cursor({
   cursorDisabledClassName,
   cursorFlipClassName,
   cursorPointerClassName,
-}: CursorProps) {
+}: CursorProps): JSX.Element {
   /**
    * Hooks
    */
