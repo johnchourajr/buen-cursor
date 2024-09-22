@@ -1,6 +1,6 @@
 {
   "name": "@muybuen/cursor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Custom cursor component for React with CSS.",
   "author": "John Choura",
   "license": "MIT",
