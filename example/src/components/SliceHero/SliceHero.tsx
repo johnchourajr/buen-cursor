@@ -76,8 +76,8 @@ const cursorTypes = [
 export function SliceHero() {
   return (
     <>
-      <section className="col-span-full flex items-center justify-center mt-40 md:mt-0 min-h-[50vh]">
-        <h1 className="headline-display-xxl">buen/cursor</h1>
+      <section className="col-span-full flex flex-col items-center justify-center py-[20vh] md:mt-0 min-h-[50vh] text-center leading-[.9]">
+        <h1 className="headline-display-xxl">Very Good<br/>Cursor</h1>
       </section>
       <div className="grid-cols-subgrid grid pb-4 col-span-full gap-4">
         {cursorTypes.map((cursorType) => (

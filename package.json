@@ -1,6 +1,6 @@
 {
   "name": "@muybuen/cursor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Custom cursor component for React with CSS.",
   "author": "John Choura",
   "license": "MIT",
@@ -9,10 +9,10 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist/",
-    "src/style/cursor.css"
+    "src/base.css"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc && cp src/base.css dist/base.css",
     "prepublishOnly": "npm run build",
     "check-types": "tsc --noEmit"
   },
