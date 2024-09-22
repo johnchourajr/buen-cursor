@@ -1,0 +1,134 @@
+/*
+├─.buen-cursor
+│ └─.buen-cursor--pointer
+├─.buen-cursor--state-message
+│ └─.buen-cursor--message-outer
+│   └─.buen-cursor--message-inner
+├─.buen-cursor--state-hover
+├─.buen-cursor--state-click
+├─.buen-cursor--state-disabled
+└─.buen-cursor--state-flip
+*/
+
+:root body.buen-cursor-on * {
+  cursor: none !important;
+}
+
+.buen-cursor {
+  --cursor-x: 0;
+  --cursor-y: 0;
+  --cursor-scale: 1;
+  --cursor-width: 2rem;
+  --cursor-height: 2rem;
+  --cursor-transform-origin: center;
+  --cursor-transition-property: transform backdrop-filter;
+  --cursor-transition-duration: 0.2s;
+  --cursor-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  --cursor-background-color: rgb(255 255 255 / 0.2);
+  --cursor-border-color: rgb(255 255 255 / 0.6);
+  --cursor-pointer-color: rgb(255 255 255 / 0.6);
+  --cursor-border-width: 0.0625rem;
+  --cursor-border-radius: 50%;
+  --cursor-backdrop-filter: blur(0.25rem);
+  --cursor-message-color: rgb(255 255 255 / 0.9);
+  --cursor-message-background-color: rgb(0 0 0 / 0.9);
+  --cursor-message-border-color: rgb(255 255 255 / 0.6);
+
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translate3d(-50%, -50%, 0);
+  width: 1rem;
+  height: 1rem;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.buen-cursor--pointer {
+  position: absolute;
+  width: var(--cursor-width);
+  height: var(--cursor-height);
+  transform: translate3d(var(--cursor-x), var(--cursor-y), 0)
+    scale(var(--cursor-scale));
+  transform-origin: var(--cursor-transform-origin);
+  transition-property: var(--cursor-transition-property);
+  transition-duration: var(--cursor-transition-duration);
+  transition-timing-function: var(--cursor-transition-timing-function);
+  background-color: var(--cursor-background-color);
+  border-radius: var(--cursor-border-radius);
+  border-color: var(--cursor-border-color);
+  border-width: var(--cursor-border-width);
+  backdrop-filter: var(--cursor-backdrop-filter);
+}
+
+.buen-cursor.buen-cursor--state-message .buen-cursor--message-outer {
+  opacity: 1;
+  transform: none;
+  transition-delay: 100ms;
+  transition-duration: 0.1s;
+}
+
+.buen-cursor.buen-cursor--state-message.buen-cursor--state-flip
+  .buen-cursor--message-outer {
+  opacity: 1;
+  transform: translate3d(-100%, 0, 0);
+  left: 0;
+}
+
+.buen-cursor.buen-cursor--state-message.buen-cursor--state-flip
+  .buen-cursor--message-inner {
+  transform: translate3d(-100%, 0, 0);
+}
+
+.buen-cursor--message-outer {
+  position: absolute;
+  top: 100%;
+  left: 100%;
+  max-width: 0px;
+  max-height: 0px;
+  width: fit-content;
+  opacity: 0;
+  transform: translate3d(-0.5rem, -0.5rem, 0);
+  transition-property: transform opacity left;
+  transition-duration: var(--cursor-transition-duration);
+  transition-timing-function: var(--cursor-transition-timing-function);
+}
+
+.buen-cursor--message-inner {
+  width: max-content;
+  padding: 0.25rem 0.5rem 0.4rem;
+  color: var(--cursor-message-color);
+  background-color: var(--cursor-message-background-color);
+  border-radius: 0.25rem;
+  border-width: var(--cursor-border-width);
+  border-color: var(--cursor-message-border-color);
+  backdrop-filter: var(--cursor-backdrop-filter);
+  transition-property: transform width;
+  transition-duration: var(--cursor-transition-duration);
+  transition-timing-function: var(--cursor-transition-timing-function);
+}
+
+.buen-cursor--message-inner p {
+  line-height: 1;
+}
+
+.buen-cursor.buen-cursor--state-hover {
+  --cursor-scale: 0.8;
+  --cursor-backdrop-filter: blur(0.2rem);
+}
+
+.buen-cursor.buen-cursor--state-hover.buen-cursor--state-click {
+  --cursor-scale: 0.7;
+}
+
+.buen-cursor.buen-cursor--state-click {
+  --cursor-scale: 0.95;
+}
+
+.buen-cursor.buen-cursor--state-disabled {
+  --cursor-scale: 0;
+  --cursor-background-color: transparent;
+  --cursor-border-color: transparent;
+  --cursor-pointer-color: transparent;
+}

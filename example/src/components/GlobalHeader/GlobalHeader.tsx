@@ -37,10 +37,6 @@ export function GlobalHeader() {
     },
   };
 
-  if (path === "/scale") {
-    return null;
-  }
-
   return (
     <div
       className={clsx(
@@ -63,7 +59,7 @@ export function GlobalHeader() {
           <div className="col-span-full flex w-full gap-4 items-center justify-center">
             <GlobalHeaderCopyButton text={"npx jsr add @buen/cursor"} />
             <Link
-              href={"https://jsr.io/@buen/type"}
+              href={"https://jsr.io/@buen/cursor"}
               className="uppercase text-body"
               target="_blank"
             >

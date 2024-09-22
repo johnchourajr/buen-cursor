@@ -19,6 +19,7 @@ const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/Privider/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -29,11 +30,21 @@ const config: Config = {
       "2": "2px",
       "3": "3px",
     },
-    color: {
-      foreground: "#00ff0a",
-      background: "#000000",
+    colors: {
+      primary: "rgb(var(--color-primary))",
+      secondary: "rgb(var(--color-secondary))",
+
+      pink: "rgb(var(--color-primary))",
+      black: "rgb(var(--color-secondary))",
     },
     extend: {
+      borderWidth: {
+        DEFAULT: "1px",
+        "0.5": "0.5px",
+        "1": "1px",
+        "2": "2px",
+        "3": "3px",
+      },
       spacing: {
         "0.05em": "0.05em",
         "0.1em": "0.1em",
@@ -56,10 +67,12 @@ const config: Config = {
         bold: ["GoshaSans-Ultrabold", "sans-serif"],
         sans: ["GoshaSans-Regular", "sans-serif"],
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      textUnderlineOffset: {
+        DEFAULT: "1px",
+        "1": "1px",
+        "2": "2px",
+        "3": "3px",
+        "4": "4px",
       },
     },
   },

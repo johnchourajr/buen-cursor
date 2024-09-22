@@ -19,10 +19,14 @@
 }
 
 :root {
-  --color-primary: 255, 0, 242;
+  --color-primary: 255 0 242;
   --color-primary-hex: #ff00f2;
-  --color-secondary: 0, 0, 0;
+  --color-secondary: 0 0 0;
   --color-secondary-hex: #000000;
+}
+
+::selection {
+  background: rgb(var(--color-primary) / 0.2);
 }
 
 body {
@@ -30,6 +34,15 @@ body {
   background: rgb(var(--color-secondary));
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.buen-cursor.buen-cursor-mod {
+  --cursor-background-color: rgb(var(--color-primary) / 0.2);
+  --cursor-border-color: rgb(var(--color-primary) / 0.6);
+  --cursor-pointer-color: rgb(var(--color-primary) / 0.6);
+  --cursor-message-color: rgb(var(--color-primary) / 0.9);
+  --cursor-message-background-color: rgb(0 0 0 / 0.9);
+  --cursor-message-border-color: rgb(var(--color-primary) / 0.6);
 }
 
 @layer utilities {
@@ -40,9 +53,4 @@ body {
   .subgrid {
     @apply grid grid-cols-subgrid;
   }
-}
-
-.glowing-text {
-  /* @apply text-6xl font-bold bg-clip-text; */
-  backdrop-filter: url(#glow) blur(10px);
 }

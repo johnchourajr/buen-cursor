@@ -10,7 +10,7 @@ export function MainLayout({ children }: LayoutProps) {
     <main
       className={clsx(
         "min-h-screen",
-        "grid grid-cols-4 md:grid-cols-6 gap-x-4",
+        "grid grid-cols-4 md:grid-cols-6 gap-4",
         "px-4",
       )}
     >
