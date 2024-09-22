@@ -1,14 +1,17 @@
 import clsx from "clsx";
 
 import type { ReactNode } from "react";
-import { Provider } from "../Provider";
+import { Provider, TestProvider } from "../Provider";
 export type LayoutProps = {
   children: ReactNode;
+  isTest?: boolean;
 };
 
-export function MainLayout({ children }: LayoutProps) {
+export function MainLayout({ children, isTest = false }: LayoutProps) {
+  const ProviderComponent = isTest ? TestProvider : Provider;
+
   return (
-    <Provider>
+    <ProviderComponent>
       <main
         className={clsx(
           "min-h-screen",
@@ -18,6 +21,6 @@ export function MainLayout({ children }: LayoutProps) {
       >
         {children}
       </main>
-    </Provider>
+    </ProviderComponent>
   );
 }

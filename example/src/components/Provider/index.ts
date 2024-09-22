@@ -1,3 +1,4 @@
 import { Provider } from "./Provider";
+import { TestProvider } from "./TestProvider";
 
-export { Provider };
+export { Provider, TestProvider };

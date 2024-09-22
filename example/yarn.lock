@@ -107,10 +107,10 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
-"@muybuen/cursor@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/@muybuen/cursor/-/cursor-1.0.1.tgz"
-  integrity sha512-hO8vWYSok4EweMlZqEDEzQsh7A6q5FgEGkCcNa9v5OQdqOZhyGlZTJgMFiQlgINYyE3UY9KusjpdQiXPBArBcA==
+"@muybuen/cursor@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@muybuen/cursor/-/cursor-1.0.2.tgz"
+  integrity sha512-+h+VDm/YnjU+TkF9f1eKBSPxKjzN4RCVyu4TCPT21BOP5bkSFmnqP1muxaS3rO7Cuvdcp0rGCCUCPxLvepZtXw==
 
 "@next/env@14.2.3":
   version "14.2.3"
