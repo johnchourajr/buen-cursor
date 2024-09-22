@@ -1,6 +1,6 @@
-import clsx from "clsx";
-
+import { clsx } from "clsx";
 import type { ReactNode } from "react";
+
 import { Provider, TestProvider } from "../Provider";
 export type LayoutProps = {
   children: ReactNode;

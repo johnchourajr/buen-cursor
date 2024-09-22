@@ -3,7 +3,7 @@ import { SliceHero } from "@/components/SliceHero";
 
 export default function Home() {
   return (
-    <MainLayout>
+    <MainLayout isTest>
       <SliceHero />
     </MainLayout>
   );
