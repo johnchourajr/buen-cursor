@@ -50,7 +50,7 @@ export function GlobalHeader() {
           className={clsx(
             "subgrid col-start-1 col-span-full md:col-start-5 gap-y-4",
             "relative pointer-events-auto",
-            "before:absolute before:-inset-4 before:content-[''] before:bg-black before:-z-10 before:bg-opacity-50 before:backdrop-blur-sm before:rounded-bl-md"
+            "before:absolute before:-inset-4 before:content-[''] before:bg-black60 before:-z-10 before:backdrop-blur-md before:rounded-bl-md"
           )}
           initial={"initial"}
           variants={parentVariants}

@@ -2,16 +2,17 @@ import { buenTypeTailwind } from "@buen/type";
 import containerQueries from "@tailwindcss/container-queries";
 import type { Config } from "tailwindcss";
 import { PluginAPI } from "tailwindcss/types/config";
-import { customTexts } from "./src/config/type";
+import { customHeadlines, customTexts } from "./src/config/type";
 
 function typePlugin({ addUtilities }: PluginAPI) {
   buenTypeTailwind(
     { addUtilities },
     {
       customTexts,
+      customHeadlines,
       disableDefaults: false,
       customMinScreenSize: 480,
-    },
+    }
   );
 }
 
@@ -36,6 +37,9 @@ const config: Config = {
 
       pink: "rgb(var(--color-primary))",
       black: "rgb(var(--color-secondary))",
+      black60: "rgb(var(--color-secondary) / 0.6)",
+      black40: "rgb(var(--color-secondary) / 0.4)",
+      black20: "rgb(var(--color-secondary) / 0.2)",
     },
     extend: {
       borderWidth: {

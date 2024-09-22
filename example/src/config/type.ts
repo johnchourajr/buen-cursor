@@ -23,3 +23,13 @@ export const customTexts: Record<
     lineHeight: 1.25,
   },
 };
+
+export const customHeadlines: Record<"display-xxl", TypeDefinition> = {
+  "display-xxl": {
+    _id: "headline-display-xxl",
+    classAlias: ["main-headline"],
+    fontWeight: "bold",
+    clamp: [6, 21],
+    letterSpacing: "-0.05em",
+  },
+};
