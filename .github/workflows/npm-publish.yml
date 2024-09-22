@@ -1,16 +1,16 @@
-name: Publish to NPM
+name: Conditional NPM Publish
 
 on:
   push:
     branches:
-      - main # Trigger this action only on push to the "main" branch
+      - main # Run this workflow when pushing to the "main" branch
 
 jobs:
   publish:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Check out the code from the repository
+      # Step 1: Checkout code from the repository
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -18,17 +18,46 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "18" # Use the Node.js version compatible with your package
-          registry-url: "https://registry.npmjs.org/" # NPM registry URL
+          node-version: "18"
+          registry-url: "https://registry.npmjs.org/"
 
-      # Step 3: Install dependencies and build the package
-      - name: Install dependencies and build
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Step 4: Get current version of the package from NPM
+      - name: Get latest version from NPM
+        id: npm_info
         run: |
-          npm install
-          npm run build  # Build the package
+          NPM_LATEST_VERSION=$(npm view @johnchourajr/buen-cursor version || echo "0.0.0")
+          echo "Latest version on NPM: $NPM_LATEST_VERSION"
+          echo "latest_version=$NPM_LATEST_VERSION" >> $GITHUB_ENV
 
-      # Step 4: Publish the package to NPM
+      # Step 5: Get version from package.json
+      - name: Get local package version
+        id: local_version
+        run: |
+          LOCAL_VERSION=$(node -p "require('./package.json').version")
+          echo "Local version in package.json: $LOCAL_VERSION"
+          echo "local_version=$LOCAL_VERSION" >> $GITHUB_ENV
+
+      # Step 6: Compare versions and decide whether to publish
+      - name: Check if version is higher
+        id: version_check
+        run: |
+          if [ "$(printf '%s\n' "$local_version" "$latest_version" | sort -V | tail -n 1)" != "$local_version" ]; then
+            echo "Error: The version in package.json ($local_version) is not greater than the published version ($latest_version)."
+            exit 1
+          else
+            echo "Version check passed. Proceeding with the publish."
+          fi
+
+      # Step 7: Build the package
+      - name: Build the package
+        run: npm run build
+
+      # Step 8: Publish to NPM
       - name: Publish to NPM
-        run: npm publish --access public # Publish the package to NPM
+        run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }} # Use the NPM token from GitHub Secrets
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
