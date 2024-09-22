@@ -40,7 +40,7 @@ const cursorTypes = [
     content: (
       <>
         <ActionLink href="#" data-cursor="false" scroll={false}>
-          Link with data-cursor=&ldquo;native&rdquo;
+          Link with data-cursor=&ldquo;false&rdquo;
         </ActionLink>
       </>
     ),
