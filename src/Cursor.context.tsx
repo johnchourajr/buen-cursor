@@ -8,8 +8,6 @@ import {
 } from "react";
 
 type BuenCursorContextType = {
-  cursorState: string;
-  setCursorState: Dispatch<string>;
   cursorMessage: string;
   setCursorMessage: Dispatch<string>;
   enableCursor: boolean;
@@ -34,7 +32,6 @@ export function BuenCursorProvider({
 }: {
   children: ReactNode;
 }): JSX.Element {
-  const [cursorState, setCursorState] = useState("default");
   const [cursorMessage, setCursorMessage] = useState("");
   const [enableCursor, setEnableCursor] = useState(true);
   const [viewportSize, setViewportSize] = useState({
@@ -68,8 +65,6 @@ export function BuenCursorProvider({
   return (
     <BuenCursorContext.Provider
       value={{
-        cursorState,
-        setCursorState,
         cursorMessage,
         setCursorMessage,
         enableCursor,

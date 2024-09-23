@@ -11,6 +11,8 @@ type CursorProps = {
   cursorDisabledClassName?: string;
   cursorFlipClassName?: string;
   cursorPointerClassName?: string;
+
+  flipOffset?: number;
 };
 
 export function Cursor({
@@ -20,6 +22,8 @@ export function Cursor({
   cursorDisabledClassName,
   cursorFlipClassName,
   cursorPointerClassName,
+
+  flipOffset = 150,
 }: CursorProps): JSX.Element {
   /**
    * Hooks
@@ -124,7 +128,7 @@ export function Cursor({
   }, [isDisabled]);
 
   useEffect(() => {
-    setFlipCursor(!!viewportSize && x > viewportSize.width - 200);
+    setFlipCursor(!!viewportSize && x > viewportSize.width - flipOffset);
   }, [viewportSize, x]);
 
   return (
@@ -142,7 +146,6 @@ export function Cursor({
           flipCursor && clsx("buen-cursor--state-flip", cursorFlipClassName),
         )}
         style={{ left: x, top: y }}
-        data-flip={flipCursor}
       >
         {!!enableCursor && (
           <div
