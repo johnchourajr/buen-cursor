@@ -79,10 +79,7 @@ const config: Config = {
       },
     },
   },
-  plugins: [
-    // typePlugin,
-    containerQueries,
-  ],
+  plugins: [typePlugin, containerQueries],
 };
 
 export default config;
