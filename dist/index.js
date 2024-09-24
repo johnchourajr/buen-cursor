@@ -1,5 +1,7 @@
 /**
  * @module BuenCursor
+ *
+ * @description must be enclosed in a `BuenCursorProvider` to work properly
  */
 export { Cursor } from "./Cursor";
 /**

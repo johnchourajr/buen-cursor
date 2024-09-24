@@ -24,7 +24,7 @@
     "url": "https://github.com/johnchourajr/buen-cursor/issues"
   },
   "homepage": "https://github.com/johnchourajr/buen-cursor#readme",
-  "dependencies": {
+  "peerDependencies": {
     "react": "^18",
     "react-dom": "^18",
     "clsx": "^2.1.1"
