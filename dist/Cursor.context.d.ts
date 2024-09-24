@@ -1,7 +1,5 @@
 import { Dispatch, ReactNode } from "react";
 type BuenCursorContextType = {
-    cursorState: string;
-    setCursorState: Dispatch<string>;
     cursorMessage: string;
     setCursorMessage: Dispatch<string>;
     enableCursor: boolean;

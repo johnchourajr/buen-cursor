@@ -9,7 +9,6 @@ export function useBuenCursorContext() {
     return context;
 }
 export function BuenCursorProvider({ children, }) {
-    const [cursorState, setCursorState] = useState("default");
     const [cursorMessage, setCursorMessage] = useState("");
     const [enableCursor, setEnableCursor] = useState(true);
     const [viewportSize, setViewportSize] = useState({
@@ -37,8 +36,6 @@ export function BuenCursorProvider({ children, }) {
         }
     }, [enableCursor]);
     return (_jsx(BuenCursorContext.Provider, { value: {
-            cursorState,
-            setCursorState,
             cursorMessage,
             setCursorMessage,
             enableCursor,

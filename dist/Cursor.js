@@ -3,7 +3,7 @@ import { clsx } from "clsx";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useBuenCursorContext } from "./Cursor.context";
 import { useCursorPosition } from "./useCursorPosition";
-export function Cursor({ className, cursorHoverClassName, cursorClickClassName, cursorDisabledClassName, cursorFlipClassName, cursorPointerClassName, }) {
+export function Cursor({ className, cursorHoverClassName, cursorClickClassName, cursorDisabledClassName, cursorFlipClassName, cursorPointerClassName, flipOffset = 150, }) {
     /**
      * Hooks
      */
@@ -83,9 +83,9 @@ export function Cursor({ className, cursorHoverClassName, cursorClickClassName, 
         }
     }, [isDisabled]);
     useEffect(() => {
-        setFlipCursor(!!viewportSize && x > viewportSize.width - 200);
+        setFlipCursor(!!viewportSize && x > viewportSize.width - flipOffset);
     }, [viewportSize, x]);
     return (_jsx("div", { id: "cursor", children: _jsxs("div", { ref: ref, className: clsx(className, "buen-cursor", isHovering && clsx("buen-cursor--state-hover", cursorHoverClassName), isClicking && clsx("buen-cursor--state-click", cursorClickClassName), isDisabled &&
-                clsx("buen-cursor--state-disabled", cursorDisabledClassName), cursorMessage && "buen-cursor--state-message", flipCursor && clsx("buen-cursor--state-flip", cursorFlipClassName)), style: { left: x, top: y }, "data-flip": flipCursor, children: [!!enableCursor && (_jsx("div", { className: clsx("buen-cursor--pointer", cursorPointerClassName) })), _jsx("div", { className: clsx("buen-cursor--message-outer"), children: _jsx("div", { className: clsx("buen-cursor--message-inner"), children: _jsx("p", { children: cursorMessage }) }) })] }) }));
+                clsx("buen-cursor--state-disabled", cursorDisabledClassName), cursorMessage && "buen-cursor--state-message", flipCursor && clsx("buen-cursor--state-flip", cursorFlipClassName)), style: { left: x, top: y }, children: [!!enableCursor && (_jsx("div", { className: clsx("buen-cursor--pointer", cursorPointerClassName) })), _jsx("div", { className: clsx("buen-cursor--message-outer"), children: _jsx("div", { className: clsx("buen-cursor--message-inner"), children: _jsx("p", { children: cursorMessage }) }) })] }) }));
 }
 //# sourceMappingURL=Cursor.js.map

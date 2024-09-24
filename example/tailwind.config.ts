@@ -1,4 +1,4 @@
-import { buenTypeTailwind } from "@muybuen/type/dist/tailwind-plugin/buenTypeTailwind";
+import { buenTypeTailwind } from "@muybuen/type";
 import containerQueries from "@tailwindcss/container-queries";
 import type { Config } from "tailwindcss";
 import { PluginAPI } from "tailwindcss/types/config";
@@ -20,7 +20,6 @@ const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/Privider/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
@@ -80,7 +79,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [typePlugin, containerQueries],
+  plugins: [
+    // typePlugin,
+    containerQueries,
+  ],
 };
 
 export default config;

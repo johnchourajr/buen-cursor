@@ -5,6 +5,7 @@ type CursorProps = {
     cursorDisabledClassName?: string;
     cursorFlipClassName?: string;
     cursorPointerClassName?: string;
+    flipOffset?: number;
 };
-export declare function Cursor({ className, cursorHoverClassName, cursorClickClassName, cursorDisabledClassName, cursorFlipClassName, cursorPointerClassName, }: CursorProps): JSX.Element;
+export declare function Cursor({ className, cursorHoverClassName, cursorClickClassName, cursorDisabledClassName, cursorFlipClassName, cursorPointerClassName, flipOffset, }: CursorProps): JSX.Element;
 export {};

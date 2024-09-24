@@ -1,7 +1,9 @@
-import { GlobalHeader } from "@/components/GlobalHeader";
-
+import "@muybuen/cursor/dist/base.css";
 import type { Metadata } from "next";
 import React from "react";
+
+import { GlobalHeader } from "@/components/GlobalHeader";
+
 import "./globals.css";
 
 export const metadata: Metadata = {

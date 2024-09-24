@@ -9,7 +9,7 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist/",
-    "dist/base.css"
+    "src/base.css"
   ],
   "scripts": {
     "build": "tsc && cp src/base.css dist/base.css",
