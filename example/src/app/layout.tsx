@@ -1,4 +1,3 @@
-import "@muybuen/cursor/dist/base.css";
 import type { Metadata } from "next";
 import React from "react";
 
