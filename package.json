@@ -16,6 +16,9 @@
     "prepublishOnly": "npm run build",
     "check-types": "tsc --noEmit"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/johnchourajr/buen-cursor.git"

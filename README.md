@@ -1,4 +1,5 @@
 # @muybuen/cursor
+[![npm version](https://badge.fury.io/js/@muybuen%2Fcursor.svg)](https://badge.fury.io/js/@muybuen%2Fcursor)
 
 A TypeScript first Custom Cursor for React and Next.js
 
