@@ -2,6 +2,7 @@
 
 import { ActionButton } from "../Action/ActionButton";
 import { ActionLink } from "../Action/ActionLink";
+import { SvgHeader } from "../SvgHeader";
 
 const cursorTypes = [
   {
@@ -76,8 +77,8 @@ const cursorTypes = [
 export function SliceHero() {
   return (
     <>
-      <section className="col-span-full flex flex-col items-center justify-center pt-40 md:pt-[10vh] pb-[10vh] md:mt-0 min-h-[20vh] text-center leading-[.9]">
-        <h1 className="headline-display-xxl">Muy<span className="w-[0.2em] inline-block" />Buen<br/>/Cursor</h1>
+      <section className="col-span-full flex flex-col items-center justify-end h-[43vw] min-h-[50vh] md:mt-0">
+        <SvgHeader className="w-[calc(100%+32px)] -mx-4 -mt-0.25em" />
       </section>
       <div className="grid-cols-subgrid grid pb-4 col-span-full gap-4">
         {cursorTypes.map((cursorType) => (
