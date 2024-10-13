@@ -85,7 +85,12 @@ export function Cursor({ className, cursorHoverClassName, cursorClickClassName, 
     useEffect(() => {
         setFlipCursor(!!viewportSize && x > viewportSize.width - flipOffset);
     }, [viewportSize, x]);
-    return (_jsx("div", { id: "cursor", children: _jsxs("div", { ref: ref, className: clsx(className, "buen-cursor", isHovering && clsx("buen-cursor--state-hover", cursorHoverClassName), isClicking && clsx("buen-cursor--state-click", cursorClickClassName), isDisabled &&
-                clsx("buen-cursor--state-disabled", cursorDisabledClassName), cursorMessage && "buen-cursor--state-message", flipCursor && clsx("buen-cursor--state-flip", cursorFlipClassName)), style: { left: x, top: y }, children: [!!enableCursor && (_jsx("div", { className: clsx("buen-cursor--pointer", cursorPointerClassName) })), _jsx("div", { className: clsx("buen-cursor--message-outer"), children: _jsx("div", { className: clsx("buen-cursor--message-inner"), children: _jsx("p", { children: cursorMessage }) }) })] }) }));
+    return (_jsx("div", { id: "cursor", children: _jsx("div", { className: "buen-cursor-outer", style: {
+                transform: `translate3d(${x}px, ${y}px, 0)`,
+                willChange: "transform",
+            }, children: _jsxs("div", { ref: ref, className: clsx(className, "buen-cursor", isHovering &&
+                    clsx("buen-cursor--state-hover", cursorHoverClassName), isClicking &&
+                    clsx("buen-cursor--state-click", cursorClickClassName), isDisabled &&
+                    clsx("buen-cursor--state-disabled", cursorDisabledClassName), cursorMessage && "buen-cursor--state-message", flipCursor && clsx("buen-cursor--state-flip", cursorFlipClassName)), children: [!!enableCursor && (_jsx("div", { className: clsx("buen-cursor--pointer", cursorPointerClassName) })), _jsx("div", { className: clsx("buen-cursor--message-outer"), children: _jsx("div", { className: clsx("buen-cursor--message-inner"), children: _jsx("p", { children: cursorMessage }) }) })] }) }) }));
 }
 //# sourceMappingURL=Cursor.js.map

@@ -81,12 +81,12 @@ export function Cursor({
           break;
       }
     },
-    [setCursorMessage],
+    [setCursorMessage]
   );
 
   useEffect(() => {
     const elements = document.querySelectorAll(
-      "a, button, [data-cursor], [data-cursor-drag], [data-cursor-message]",
+      "a, button, [data-cursor], [data-cursor-drag], [data-cursor-message]"
     );
 
     elements.forEach((el) => {
@@ -134,27 +134,36 @@ export function Cursor({
   return (
     <div id="cursor">
       <div
-        ref={ref}
-        className={clsx(
-          className,
-          "buen-cursor",
-          isHovering && clsx("buen-cursor--state-hover", cursorHoverClassName),
-          isClicking && clsx("buen-cursor--state-click", cursorClickClassName),
-          isDisabled &&
-            clsx("buen-cursor--state-disabled", cursorDisabledClassName),
-          cursorMessage && "buen-cursor--state-message",
-          flipCursor && clsx("buen-cursor--state-flip", cursorFlipClassName),
-        )}
-        style={{ left: x, top: y }}
+        className="buen-cursor-outer"
+        style={{
+          transform: `translate3d(${x}px, ${y}px, 0)`,
+          willChange: "transform",
+        }}
       >
-        {!!enableCursor && (
-          <div
-            className={clsx("buen-cursor--pointer", cursorPointerClassName)}
-          />
-        )}
-        <div className={clsx("buen-cursor--message-outer")}>
-          <div className={clsx("buen-cursor--message-inner")}>
-            <p>{cursorMessage}</p>
+        <div
+          ref={ref}
+          className={clsx(
+            className,
+            "buen-cursor",
+            isHovering &&
+              clsx("buen-cursor--state-hover", cursorHoverClassName),
+            isClicking &&
+              clsx("buen-cursor--state-click", cursorClickClassName),
+            isDisabled &&
+              clsx("buen-cursor--state-disabled", cursorDisabledClassName),
+            cursorMessage && "buen-cursor--state-message",
+            flipCursor && clsx("buen-cursor--state-flip", cursorFlipClassName)
+          )}
+        >
+          {!!enableCursor && (
+            <div
+              className={clsx("buen-cursor--pointer", cursorPointerClassName)}
+            />
+          )}
+          <div className={clsx("buen-cursor--message-outer")}>
+            <div className={clsx("buen-cursor--message-inner")}>
+              <p>{cursorMessage}</p>
+            </div>
           </div>
         </div>
       </div>
