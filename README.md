@@ -1,5 +1,12 @@
 # @muybuen/cursor
 
+[![npm version](https://badge.fury.io/js/%40muybuen%2Fcursor.svg)](https://badge.fury.io/js/%40muybuen%2Fcursor)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm downloads](https://img.shields.io/npm/dm/@muybuen/cursor.svg)](https://www.npmjs.com/package/@muybuen/cursor)
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://makeapullrequest.com)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/johnchourajr/cursor/graphs/commit-activity)
+
 A TypeScript first Custom Cursor for React and Next.js
 
 ## Installation
